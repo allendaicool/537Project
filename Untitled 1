@@ -1,0 +1,125 @@
+
+int printInfoForProcess ( char* order ,  int  count ,  char * statString ,   char * statmString)
+{
+
+	int printCount  ;
+	for (printCount = 0 ; printCount < count ; printCount ++)
+	{
+
+		if (order[printCount] == 's'||order[printCount] == 'S' || order[printCount] == 'U')
+		{
+
+			printf("input is %c   " , order[printCount]);
+			/*print = statParse(statString, order[printCount]);*/
+			printf("  %s  ", statParse(statString, order[printCount]) ) ;
+			printf("shit fuck \n" );
+		}
+		else
+		{
+
+			/*print = statmParse(statmString, order[printCount]);*/
+			/*	printf("%s  ", statmParse(statmString, order[printCount]) ) ;*/
+
+		}
+	}
+	printf("%s \n" , statString );
+	printf("%s " , statmString );
+
+	return 1 ;
+}
+/* output a string in the order of command input */
+char * statParse ( char *statString , char input)
+{
+	printf("what is %s " , statmString );
+
+	int LoopCount ;
+	char * temp = strtok (statString,"\n ");
+
+	switch (input) {
+	case 's':
+
+
+		LoopCount = 3;
+		printf("AAoutput is werv%sdsf", temp);
+
+		while ( LoopCount>1)
+		{
+			temp = strtok (NULL, "\n ");
+
+			LoopCount -- ;
+			printf("output is werv%sdsf", temp);
+
+		}
+
+		return temp ;
+
+		break;
+	case 'S':
+
+		LoopCount = 15;
+
+		while ( LoopCount>1)
+		{
+			temp = strtok (NULL, "\n ");
+
+			LoopCount -- ;
+		}
+		printf("%s ", temp);
+		char * formatnStime = "Stime=";
+		printOutForStime = (char *)malloc(strlen(temp)+strlen(formatnStime)+1);
+		strcpy (printOutForStime, formatnStime);
+		strcat (printOutForStime, temp);
+		return printOutForStime ;
+		break;
+	case 'U':
+		printf("aga what is %s " , statmString );
+
+		LoopCount = 26;
+		printf("sswhdwqdat is %s tempoo " , temp );
+		temp = strtok (NULL, "\n ");
+		printf("inputwhat is %s tempoo " , temp );
+
+		while ( LoopCount>1)
+		{
+			temp = strtok (NULL, "\n ");
+
+			LoopCount -- ;
+			printf("inputwhat is %s tempoo " , temp );
+
+		}
+
+		char * formatnUtime = "Utime=";
+		/*printOutForUtime = (char *)malloc(strlen(tempoo)+strlen(formatnUtime)+1);
+		printf("what is %s " , statmString );
+		strcpy (printOutForUtime, formatnUtime);
+		strcat (printOutForUtime, tempoo);*/
+
+		return "cdsc " ;
+		break;
+	default:
+		printf("error occur invalid input");
+		exit(EXIT_FAILURE);
+	}
+	return temp ;
+
+}
+
+char * statmParse ( char *statmString , char input)
+{
+	char *output = NULL ;
+	if ( input == 'v')
+	{
+		output = strtok (statmString,"\n ");
+
+		char * formatSize = "size=";
+		printOutForSize = (char *)malloc(strlen(output)+strlen(formatSize)+1);
+		strcpy (printOutForSize, formatSize);
+		strcat (printOutForSize, output);
+		return printOutForSize ;
+
+	}
+	else
+	{
+		return NULL ;
+	}
+}
